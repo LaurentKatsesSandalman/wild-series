@@ -20,15 +20,35 @@ import Programs from "./pages/programs";
 // Create router configuration with routes
 
 // You can add more routes as you build out your app!
+// (2)this is what I did after correction (see error in "Programs")
+const programsLoader = async () => {
+  try {
+    const response = await fetch("http://localhost:3310/api/programs");
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+    path: "/", //
+    element: <App />,
+    // (2)this is what I did after correction
+    children: [
+      {
+        path: "/programs",
+        element: <Programs />,
+        loader: programsLoader,
+      },
+    ],
   },
-  {
-    path: "/programs",
-    element: <Programs />,
-  },
+  // (1)this is what I initially did:
+  // {
+  //   path: "/programs",
+  //   element: <Programs />,
+  // },
   // Try adding a new route! For example, "/about" with an About component
 ]);
 
