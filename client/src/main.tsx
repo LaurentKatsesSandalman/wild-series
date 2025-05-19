@@ -20,7 +20,7 @@ import Programs from "./pages/programs";
 // Create router configuration with routes
 
 // You can add more routes as you build out your app!
-// (2)this is what I did after correction (see error in "Programs")
+// (b2)this is what I did after correction (see error in "Programs")
 const programsLoader = async () => {
   try {
     const response = await fetch("http://localhost:3310/api/programs");
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   {
     path: "/", //
     element: <App />,
-    // (2)this is what I did after correction
+    // (a2)this is what I did after correction
     children: [
       {
         path: "/programs",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // (1)this is what I initially did:
+  // (a1)this is what I initially did:
   // {
   //   path: "/programs",
   //   element: <Programs />,

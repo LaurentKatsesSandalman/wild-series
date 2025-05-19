@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 interface ProgramInterface {
   id: number;
@@ -27,17 +26,13 @@ function Programs() {
 
   return (
     <>
-      {programs ? (
-        programs.map((program) => (
-          <div key={program.id}>
-            <h2>{program.title}</h2>
-            <p>{program.synopsis}</p>
-            <img src={program.poster} alt={program.title} />
-          </div>
-        ))
-      ) : (
-        <p>Error loading programs</p>
-      )}
+      {programs.map((program) => (
+        <div key={program.id}>
+          <h2>{program.title}</h2>
+          <p>{program.synopsis}</p>
+          <img src={program.poster} alt={program.title} />
+        </div>
+      ))}
     </>
   );
 }
