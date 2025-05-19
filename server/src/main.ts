@@ -13,13 +13,13 @@ import app from "./app";
 
 // Declaration of a "Welcome" route
 
-import type { RequestHandler } from "express";
+// import type { RequestHandler } from "express";
 
-const sayWelcome: RequestHandler = (req, res) => {
-  res.send("Welcome to Wild Series !");
-};
+// const sayWelcome: RequestHandler = (req, res) => {
+//   res.send("Welcome to Wild Series !");
+// };
 
-app.get("/", sayWelcome);
+// app.get("/", sayWelcome);
 
 /* ************************************************************************* */
 
